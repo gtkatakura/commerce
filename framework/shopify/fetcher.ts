@@ -6,6 +6,10 @@ const VTEX_SUPPORTED_QUERIES: string[] = [
   'getAllProducts',
   'getAllProductPaths',
   'getProductBySlug',
+  'getAllPages',
+  'getSiteCollections',
+  'getAllProductVendors',
+  'getProductsFromCollection',
 ]
 
 const fetcher: Fetcher = async ({ method = 'POST', variables, query }) => {
