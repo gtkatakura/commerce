@@ -1,5 +1,5 @@
 import { Fetcher } from '@commerce/utils/types'
-import { API_TOKEN, API_URL, VTEX_API_URL } from './const'
+import { API_TOKEN, API_URL } from './const'
 import { handleFetchResponse } from './utils'
 
 const VTEX_SUPPORTED_QUERIES: string[] = [
@@ -17,14 +17,13 @@ const fetcher: Fetcher = async ({ method = 'POST', variables, query }) => {
     )
   ) {
     return handleFetchResponse(
-      await fetch(VTEX_API_URL, {
+      await fetch('/api/vtexGraphql', {
         method,
         body: JSON.stringify({ query, variables }),
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        mode: 'no-cors',
       })
     )
   }
