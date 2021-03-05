@@ -1,5 +1,6 @@
 export const getCustomerQuery = /* GraphQL */ `
-  query getCustomer($customerAccessToken: String!) {
+  query getCustomer($customerAccessToken: String!)
+  @context(provider: "vtex.next-commerce-graphql") {
     customer(customerAccessToken: $customerAccessToken) {
       id
       firstName

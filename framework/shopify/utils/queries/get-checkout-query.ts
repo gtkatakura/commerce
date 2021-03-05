@@ -52,7 +52,7 @@ export const checkoutDetailsFragment = `
 
 const getCheckoutQuery = /* GraphQL */ `
   query($checkoutId: ID!) {
-    node(id: $checkoutId) {
+    node(id: $checkoutId) @context(provider:"vtex.next-commerce-graphql") {
       ... on Checkout {
         ${checkoutDetailsFragment}
       }

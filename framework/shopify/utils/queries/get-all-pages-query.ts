@@ -1,6 +1,6 @@
 export const getAllPagesQuery = /* GraphQL */ `
   query getAllPages($first: Int = 250) {
-    pages(first: $first) {
+    pages(first: $first) @context(provider: "vtex.next-commerce-graphql") {
       edges {
         node {
           id

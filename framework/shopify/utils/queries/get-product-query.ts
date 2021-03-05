@@ -1,6 +1,7 @@
 const getProductQuery = /* GraphQL */ `
   query getProductBySlug($slug: String!) {
-    productByHandle(handle: $slug) {
+    productByHandle(handle: $slug)
+      @context(provider: "vtex.next-commerce-graphql") {
       id
       handle
       title

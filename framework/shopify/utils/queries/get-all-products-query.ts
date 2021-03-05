@@ -39,7 +39,7 @@ products(
   sortKey: $sortKey
   reverse: $reverse
   query: $query
-) {
+) @context(provider:"vtex.next-commerce-graphql") {
   ${productConnection}
 }
 `

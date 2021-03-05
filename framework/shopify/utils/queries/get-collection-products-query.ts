@@ -7,7 +7,7 @@ const getCollectionProductsQuery = /* GraphQL */ `
     $sortKey: ProductCollectionSortKeys = RELEVANCE
     $reverse: Boolean = false
   ) {
-    node(id: $categoryId) {
+    node(id: $categoryId) @context(provider:"vtex.next-commerce-graphql") {
       id
       ... on Collection {
         products(
