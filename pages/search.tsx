@@ -29,7 +29,7 @@ const SORT = Object.entries({
 import {
   filterQuery,
   getCategoryPath,
-  getDesignerPath,
+  getBrandPath,
   useSearchMeta,
 } from '@lib/search'
 import { Product } from '@commerce/types'
@@ -60,7 +60,7 @@ export default function Search({
   const router = useRouter()
   const { asPath } = router
   const { q, sort } = router.query
-  // `q` can be included but because categories and designers can't be searched
+  // `q` can be included but because categories and brands can't be searched
   // in the same way of products, it's better to ignore the search input if one
   // of those is selected
   const query = filterQuery({ sort })
@@ -194,7 +194,7 @@ export default function Search({
             </div>
           </div>
 
-          {/* Designs */}
+          {/* Brands */}
           <div className="relative inline-block w-full">
             <div className="lg:hidden mt-3">
               <span className="rounded-md shadow-sm">
@@ -207,8 +207,8 @@ export default function Search({
                   aria-expanded="true"
                 >
                   {activeBrand?.name
-                    ? `Design: ${activeBrand?.name}`
-                    : 'All Designs'}
+                    ? `Brand: ${activeBrand?.name}`
+                    : 'All Brands'}
                   <svg
                     className="-mr-1 ml-2 h-5 w-5"
                     xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +248,7 @@ export default function Search({
                     >
                       <Link
                         href={{
-                          pathname: getDesignerPath('', category),
+                          pathname: getBrandPath('', category),
                           query,
                         }}
                       >
@@ -258,7 +258,7 @@ export default function Search({
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          All Designers
+                          All Brands
                         </a>
                       </Link>
                     </li>
@@ -275,7 +275,7 @@ export default function Search({
                       >
                         <Link
                           href={{
-                            pathname: getDesignerPath(node.path, category),
+                            pathname: getBrandPath(node.path, category),
                             query,
                           }}
                         >
@@ -328,7 +328,7 @@ export default function Search({
                     ) : (
                       <>
                         There are no products that match the selected category &
-                        designer
+                        brand
                       </>
                     )}
                   </span>
