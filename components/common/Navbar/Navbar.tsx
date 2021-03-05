@@ -19,14 +19,11 @@ const Navbar: FC = () => (
             <Link href="/search">
               <a className={s.link}>All</a>
             </Link>
-            <Link href="/search?q=clothes">
-              <a className={s.link}>Clothes</a>
+            <Link href="/search?q=electronics">
+              <a className={s.link}>Electronics</a>
             </Link>
-            <Link href="/search?q=accessories">
-              <a className={s.link}>Accessories</a>
-            </Link>
-            <Link href="/search?q=shoes">
-              <a className={s.link}>Shoes</a>
+            <Link href="/search?q=grocery">
+              <a className={s.link}>Grocery</a>
             </Link>
           </nav>
         </div>
