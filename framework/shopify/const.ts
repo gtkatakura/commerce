@@ -8,8 +8,16 @@ export const STORE_DOMAIN = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN
 
 export const SHOPIFY_COOKIE_EXPIRE = 30
 
-export const VTEX_API_URL = `https://next--storecomponents.myvtex.com/_v/private/vtex.next-commerce-graphql@0.2.1/graphiql/v1`
+export const VTEX_API_URL = process.env.VTEX_IO_GRAPHQL_URL
 
 export const API_URL = `https://${STORE_DOMAIN}/api/2021-01/graphql.json`
 
 export const API_TOKEN = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+
+declare global {
+  namespace NodeJS {
+    export interface ProcessEnv {
+      VTEX_IO_GRAPHQL_URL: string
+    }
+  }
+}

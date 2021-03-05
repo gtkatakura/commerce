@@ -6,6 +6,7 @@ import {
   SHOPIFY_CHECKOUT_ID_COOKIE,
   SHOPIFY_CUSTOMER_TOKEN_COOKIE,
   SHOPIFY_COOKIE_EXPIRE,
+  VTEX_API_URL,
 } from '../const'
 
 if (!API_URL) {
@@ -17,6 +18,12 @@ if (!API_URL) {
 if (!API_TOKEN) {
   throw new Error(
     `The environment variable NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN is missing and it's required to access your store`
+  )
+}
+
+if (!VTEX_API_URL) {
+  throw new Error(
+    `The environment variable VTEX_API_URL is missing and it's required to access your store`
   )
 }
 

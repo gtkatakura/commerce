@@ -43,7 +43,7 @@ const fetchGraphqlApi: GraphQLFetcher = async (
     return { data, res }
   }
 
-  // console.log(query, variables)
+  console.log('fetch-graphql-api', query, variables)
 
   const res = await fetch(API_URL, {
     ...fetchOptions,

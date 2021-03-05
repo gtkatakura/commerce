@@ -32,6 +32,8 @@ const fetcher: Fetcher = async ({ method = 'POST', variables, query }) => {
     )
   }
 
+  console.log('fetcher', query, variables)
+
   return handleFetchResponse(
     await fetch(API_URL, {
       method,
